@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -40,7 +40,7 @@
 
 <div class="jumbotron">
     <h1 class="display-4">Want To Have Something Delectable For Lunch!!!!!</h1>
-    <p class="lead">Someone is hungry? Hungry people are certainly not productive and satisfied We certainly don't want hangry employees in our office. So, if you want don't want to limt yourself in your growth. Please, do log in!!!! to maintain symboitic relation alive between us...... </p>
+    <p class="lead">Someone is hungry? Hungry people are certainly not productive and satisfied We certainly don't want hangry employees in our office. So, if you want don't want to limt yourself in your growth. Please, do log in!!!! to maintain symboitic relation alive between us......  So, to order something numbing please do login to place your order.</p>
     <hr class="my-4">
     <a class="btn btn-primary btn-lg" href="form.php" role="button">Sign Up</a>
 </div>
