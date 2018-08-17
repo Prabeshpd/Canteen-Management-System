@@ -58,6 +58,14 @@ $staffuser = Staffuser::find_all();
         </tbody>
       </table>
     </div>
+    <div class="container">
+        <h3>Add staff working in canteen department</h3>
+        <div>
+            <a class="btn btn-primary btn-lg" href="create_staffusers.php" role="button">Add Staff memebers</a>
+        </div>
+    </div>
+    <br />
+    <br />
 <div align="center">
     <a class="btn btn-primary btn-lg" href="adminlogout.php" role="button">logout</a>
 </div>

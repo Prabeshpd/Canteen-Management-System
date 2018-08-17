@@ -34,7 +34,7 @@ class Db_object{
         $properties = array();
         foreach (static::$db_table_fields as $db_field){
             if(property_exists($this,$db_field)){
-                $properties[db_field] = $this->$db_field;
+                $properties[$db_field] = $this->$db_field;
             }
         }
         return $properties;
@@ -43,17 +43,17 @@ class Db_object{
         global $database;
         $clean_properties = array();
         foreach ($this->properties() as $key => $value){
-            $clean_properties[key] = $database->escape_string($value);
+            $clean_properties[$key] = $database->escape_string($value);
         }
         return $clean_properties;
     }
     public function save(){
-        return(issiet($this->id)) ? $this->update() : $this->create();
+        return(isset($this->id)) ? $this->update() : $this->create();
     }
     public function create(){
         global $database;
         $properties = $this->clean_properties();
-        $sql = "INSET INTO " . static::$db_table . "(".implode(",", array_keys($properties)) . ")";
+        $sql = "INSET INTO " . static::$db_table . "(" . implode(",", array_keys($properties)) . ")";
         $sql.= " VLAUES ('". implode("','",array_values($properties)) ."')";
         if($database->query($sql)){
             $this->id = $database->insert_id();

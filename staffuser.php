@@ -18,6 +18,13 @@ class Staffuser extends Db_object{
         $the_result_array = self::find_by_query($sql);
         return !empty($the_result_array) ? array_shift($the_result_array) : false;
     }
+    public function save(){
+        if($this->id){
+          $this->update();
+        }else{
+          $this->create();
+        }
+      }
 }
 
 
