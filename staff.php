@@ -2,7 +2,7 @@
 require_once("init.php");
 ?>
 <?php
-if(!$session->is_admin_signed_in()){
+if(!$session->is_staff_signed_in()){
     redirect("stafflogin.php");
 }
 ?>
