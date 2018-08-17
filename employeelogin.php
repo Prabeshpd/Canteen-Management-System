@@ -1,3 +1,25 @@
+<?php require_once("init.php"); ?>
+<?php
+if($session->is_employee_signed_in()){
+    redirect("employee.php");
+}
+if(isset($_POST['employeelogin'])){
+    $email = trim($_POST['email']);
+    $password = trim($_POST['password']);
+    $staff_user_found = Employeeuser::verify_employee_user($email,$password);
+    if($employee_user_found){
+        $session->employee_login($employee_user_found);
+        redirect("employee.php");
+    }else{
+        $the_message = "your message or password is incorrect";
+    }
+}
+else{
+    $the_message = '';
+    $email = '';
+    $password = '';
+    }
+?>
 <!DOCTYPE html>
 <html>
 <head>

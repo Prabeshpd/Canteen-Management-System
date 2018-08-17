@@ -1,3 +1,30 @@
+<?php require_once("init.php"); ?>
+<?php
+if($session->is_admin_signed_in()){
+    redirect("admin.php");
+}
+if(isset($_POST['adminlogin'])){
+    $email = trim($_POST['email']);
+    $password = trim($_POST['password']);
+    $admin_user_found = Adminuser::verify_admin_user($email,$password);
+    if($admin_user_found){
+        $session->admin_login($admin_user_found);
+        redirect("admin.php");
+    }else{
+        $the_message = "your message or password is incorrect";
+    }
+}
+else{
+    $the_message = '';
+    $email = '';
+    $password = '';
+    }
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>

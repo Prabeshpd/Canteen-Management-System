@@ -5,7 +5,7 @@ class Session{
     private $employee_signed_in = false;
     public $admin_user_id;
     public $staff_user_id;
-    public $employee_user_id;
+    public $employee_user_id; 
     public $message;
 
     function __construct(){
@@ -20,10 +20,10 @@ class Session{
         if(!empty($msg)){
             $_SESSION['message'] = $msg;
         }else{
-            return $message;
+            return $this->message;
         }
     }
-    public function check_message(){
+    private function check_message(){
         if(isset($_SESSION['message'])){
             $this->message = $_SESSION['message'];
             unset($_SESSION['message']);
@@ -40,36 +40,35 @@ class Session{
     public function is_employee_signed_in(){
         return $this->employee_signed_in;
     }
-    public function admin_login($user){
-        if($user){
-            $this->admin_user_id = $_SESSION['admin_user_id'] = $admin_user->admin_id;
+    public function admin_login($admin_user){
+        if($admin_user){
+            $this->admin_user_id = $_SESSION['admin_user_id'] = $admin_user->admin_user_id;
             $this->admin_signed_in = true;
         }
     }
     public function admin_logout(){
             unset($_SESSION['admin_user_id']);
+            unset($this->admin_user_id);
             $this->admin_signed_in = false;
         }
-    
-    public function staff_login($user){
-        if($user){
+    public function staff_login($staff_user){
+        if($staff_user){
             $this->staff_user_id = $_SESSION['staff_user_id'] = $staff_user->staff_id;
             $this->admin_signed_in = true;
         }
     }
     public function staff_logout(){
-            unset($_SESSION['staff_user-id']);
+            unset($_SESSION['staff_user_id']);
             $this->staff_signed_in = false;
         }
-    
-    public function employee_login($user){
-        if($user){
-            $this->employee_user_id = $_SESSION['employeee_user_id'] = $employee_user->admin_id;
+    public function employee_login($employee_user){
+         if($employee_user){
+            $this->employee_user_id = $_SESSION['employeee_user_id'] = $employee_user->employee_id;
             $this->employee_signed_in = true;
         }
     }
     public function employee_logout(){
-            unset($_SESSION['employee_user-id']);
+            unset($_SESSION['employee_user_id']);
             $this->employee_signed_in = false;
         }
     private function check_admin_login(){

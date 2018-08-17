@@ -4,7 +4,7 @@ require_once("config.php");
 class Database{
     public $connection;
     function __construct(){
-        $this->db_connection;
+        $this->db_connection();
     }
     //function for connecting database and checking error
     public function db_connection(){
@@ -27,7 +27,7 @@ class Database{
     }
     //for input string filtering the input string of sql injections
     public function escape_string($string){
-        $escaped_string = mysqli_real_escape_string($this->connection,string);
+        $escaped_string = mysqli_real_escape_string($this->connection, $string);
         return $escaped_string;
     }
     //if user wants to insert id or get hte id for database table function insert id can be used to find data by id

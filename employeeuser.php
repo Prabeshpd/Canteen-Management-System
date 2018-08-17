@@ -8,13 +8,13 @@ class Employeeuser extends Db_object{
     public $email;
     public $password;
 
-    public function verify_emloyee_user($email, $password){
+    public function verify_employee_user($email, $password){
         global $database;
         $email = $database->escape_string($email);
         $password = $database->escape_string($password);
-        $sql = "SELECT FROM " . self::$db_table . " WHERE ";
-        $sql .= "email = '{email}' ";
-        $sql .= "And password = '{password}' ";
+        $sql = "SELECT * FROM " . self::$db_table . " WHERE ";
+        $sql .= "email = '{$email}' ";
+        $sql .= "AND password = '{$password}' ";
         $the_result_array = self::find_by_query($sql);
         return !empty($the_result_array) ? array_shift($the_result_array) : false;
     }

@@ -1,3 +1,25 @@
+<?php require_once("init.php"); ?>
+<?php
+if($session->is_staff_signed_in()){
+    redirect("staff.php");
+}
+if(isset($_POST['stafflogin'])){
+    $email = trim($_POST['email']);
+    $password = trim($_POST['password']);
+    $staff_user_found = Staffuser::verify_staff_user($email,$password);
+    if($staff_user_found){
+        $session->staff_login($staff_user_found);
+        redirect("staff.php");
+    }else{
+        $the_message = "your message or password is incorrect";
+    }
+}
+else{
+    $the_message = '';
+    $email = '';
+    $password = '';
+    }
+?>
 <!DOCTYPE html>
 <html>
 <head>
