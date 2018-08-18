@@ -47,7 +47,12 @@ else{
         <button class="btn btn-outline-primary" type="employeelogin" value = "employeelogin" name="employeelogin">Login</button>
     </form>
 </div>
-
+<div>
+<a href="forgotpassword.php">forgot password</a>
+</div>
+<div>
+<a href="resetpassword.php">reset password</a>
+</div>
 
 
 </body>

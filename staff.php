@@ -41,7 +41,7 @@ if(!$session->is_staff_signed_in()){
             <br />
     </div>
     <button class="btn btn-outline-primary" type="menusubmitAdmin_staff" value = "menusubmitAdmin_staff" name="menusubmitAdmin_staff" onclick="postToAdmin()">Menu Submit</button>
-    <button class="btn btn-outline-primary" type="menusubmitEmployee_staff'" value = "menusubmitEmployee_staff'" name="menusubmitEmployee_staff'" onclick="postToEmployee()">Menu</button>
+    <button class="btn btn-outline-primary" type="menusubmitEmployee_staff" value = "menusubmitEmployee_staff" name="menusubmitEmployee_staff" onclick="postToEmployee()">Menu</button>
 </div>
 </form>
 <script>
@@ -51,7 +51,7 @@ if(!$session->is_staff_signed_in()){
         form.submit();
     }
     function postToEmployee(){
-        form.actio="employee.php";
+        form.action="employee.php";
         form.submit();
     }
 

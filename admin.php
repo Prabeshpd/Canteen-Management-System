@@ -41,11 +41,11 @@ $staffuser = Staffuser::find_all();
 
 
           <tr>
-            <td><?php echo $staff->staff_id; ?></td>
+            <td><?php echo $staff->id; ?></td>
 
             <td><?php echo $staff->first_name; ?>
               <div class="Post_link">
-                <a href="staffuser_delete.php/staff_id=<?php echo $staff->staff_id; ?>">Delete</a>
+                <a href="staffuser_delete.php/id=<?php echo $staff->id; ?>">Delete</a>
                 <a href="#">Edit</a>
               </div>
             </td>

@@ -42,7 +42,7 @@ class Session{
     }
     public function admin_login($admin_user){
         if($admin_user){
-            $this->admin_user_id = $_SESSION['admin_user_id'] = $admin_user->admin_user_id;
+            $this->admin_user_id = $_SESSION['admin_user_id'] = $admin_user->id;
             $this->admin_signed_in = true;
         }
     }
@@ -53,7 +53,7 @@ class Session{
         }
     public function staff_login($staff_user){
         if($staff_user){
-            $this->staff_user_id = $_SESSION['staff_user_id'] = $staff_user->staff_id;
+            $this->staff_user_id = $_SESSION['staff_user_id'] = $staff_user->id;
             $this->admin_signed_in = true;
         }
     }
@@ -63,7 +63,7 @@ class Session{
         }
     public function employee_login($employee_user){
          if($employee_user){
-            $this->employee_user_id = $_SESSION['employeee_user_id'] = $employee_user->employee_id;
+            $this->employee_user_id = $_SESSION['employee_user_id'] = $employee_user->id;
             $this->employee_signed_in = true;
         }
     }

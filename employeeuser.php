@@ -2,7 +2,7 @@
 class Employeeuser extends Db_object{
     protected static $db_table = "employee_user";
     protected static $db_table_fields = array('first_name', 'last_name', 'email', 'password');
-    public $employee_id;
+    public $id;
     public $first_name;
     public $last_name;
     public $email;
