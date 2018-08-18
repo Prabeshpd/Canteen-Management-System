@@ -27,7 +27,7 @@ if(!$session->is_staff_signed_in()){
 <div align="center">
 <h1>Select Menu for today</h1>
 </div>
-<form method="post" action="admin_check_menu.php">
+<form id="menu-form" method="post" action="admin.php">
 <div class="container">
     <div class="form-group">
             <label for = "Menu Item">Menu Item</label>
@@ -40,50 +40,24 @@ if(!$session->is_staff_signed_in()){
             <br />
             <br />
     </div>
-    <button class="btn btn-outline-primary" type="menusubmit_staff'" value = "menusubmit_staff'" name="menusubmit_staff'">Menu Submit</button>
+    <button class="btn btn-outline-primary" type="menusubmitAdmin_staff" value = "menusubmitAdmin_staff" name="menusubmitAdmin_staff" onclick="postToAdmin()">Menu Submit</button>
+    <button class="btn btn-outline-primary" type="menusubmitEmployee_staff'" value = "menusubmitEmployee_staff'" name="menusubmitEmployee_staff'" onclick="postToEmployee()">Menu</button>
 </div>
 </form>
-<form>
-
-    <div>
-    <div class="form-group">
-            <label for = "Momo">Momo</label>
-            <select class="form-control" id="Momo" name="momos">
-                <option><?php echo $menu->buff_momo ?> </option>
-                <option><?php echo  $menu->chicken_momo ?></option>
-                <option><?php echo $menu->paneer_momo ?></option>
-            </select>
-    </div>
-    <div class="form-group">
-            <label for = "Chowmein">Chowmein</label>
-            <select class="form-control" id="Chowmein" name="momos">
-                <option><?php echo $menu->buff_chowmein ?> </option>
-                <option><?php echo  $menu->chicken_chowmein ?></option>
-                <option><?php echo $menu->paneer_chowmein ?></option>
-            </select>
-    </div>
-    <div class="form-group">
-            <label for = "Sandwich">Sandwich</label>
-            <select class="form-control" id="Sandwich" name="momos">
-                <option><?php echo $menu->buff_sandwich ?> </option>
-                <option><?php echo  $menu->chicken_sandwich ?></option>
-                <option><?php echo $menu->paneer_sandwich ?></option>
-            </select>
-    </div> 
-    <div class="form-group">
-            <label for = "Burger">Burger</label>
-            <select class="form-control" id="Momo" name="momos">
-                <option><?php echo $menu->buff_burger?> </option>
-                <option><?php echo  $menu->chicken_burger ?></option>
-                <option><?php echo $menu->paneer_burger ?></option>
-            </select>
-    </div>     
-    
-    </div>
+<script>
+    form = document.getElementById("menu-form");
+    function postToAdmin(){
+        form.action="admin.php";
+        form.submit();
+    }
+    function postToEmployee(){
+        form.actio="employee.php";
+        form.submit();
+    }
 
 
+</script>
 
-</form>
 <div align="center">
     <a class="btn btn-primary btn-lg" href="stafflogout.php" role="button">logout</a>
 </div>

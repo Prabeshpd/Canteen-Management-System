@@ -73,9 +73,39 @@ $staffuser = Staffuser::find_all();
 <br />
 <div>
 <h3> Menu for the day</h3>
-<div>
-    <a class="btn btn-primary btn-lg" href="admin_check_menu.php" role="button">Check Menu</a>
-</div>
+<?php
+if(isset($_POST['menusubmitAdmin_staff'])){
+    $menu_item = $_POST['Menu'];
+    echo "fghfghf";
+    $item = new Menuitem();
+
+    switch($items){
+        case($menu_item == 'Momo'):
+        echo 'Momo: <li> ' . $item->buff_momo . ' </li> 
+        <li> ' . $item->chicken_momo . ' </li>
+        <li> ' . $item->paneer_momo . ' </li>';
+        break;
+        case($menu_item == 'Chowmein'):
+        echo 'Chowmein: <li> ' . $item->buff_chowmein . ' </li> 
+        <li> ' . $item->chicken_chowmein . ' </li>
+        <li> ' . $item->paneer_chowmein . ' </li>';
+        break;
+        case($menu_item == 'Sandwich'):
+        echo 'Sandwich: <li> ' . $item->buff_sandwich . ' </li> 
+        <li> ' . $item->chicken_sandwich . ' </li>
+        <li> ' . $item->paneer_sandwich . ' </li>';
+        break;
+        case($menu_item == 'Burger'):
+        echo 'Burger: <li> ' . $item->buff_burger . ' </li> 
+        <li> ' . $item->chicken_burger . ' </li>
+        <li> ' . $item->paneer_burger . ' </li>';
+        break;
+        
+    }
+}
+echo "dsdad";
+
+?>
 
 
 
