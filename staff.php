@@ -27,7 +27,7 @@ if(!$session->is_staff_signed_in()){
 <div align="center">
 <h1>Select Menu for today</h1>
 </div>
-<form id="menu-form" method="post" action="admin.php">
+<form id="menu-form" method="post">
 <div class="container">
     <div class="form-group">
             <label for = "Menu Item">Menu Item</label>
@@ -60,6 +60,17 @@ if(!$session->is_staff_signed_in()){
 
 <div align="center">
     <a class="btn btn-primary btn-lg" href="stafflogout.php" role="button">logout</a>
+</div>
+<div class="container">
+    <form method="post" action="admin.php">
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="Order Confirmed" name="order_confirmed" id="order">Order Confirmed</input>
+        
+        <br />
+        <br />
+        <button class="btn btn-outline-primary" type="order_confirm" value = "order_confirm" name="order_confirm">Order Confirm Button</button> 
+    </div>
+    </form
 </div>
 </body>
 </html>

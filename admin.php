@@ -103,8 +103,14 @@ if(isset($_POST['menusubmitAdmin_staff'])){
         
     }
 }
-echo "dsdad";
 
+?>
+
+<?php
+if(isset($_POST['order_confirm'])){
+    $order = $_POST['order_confirmed'];
+    echo $order;
+}
 ?>
 
 

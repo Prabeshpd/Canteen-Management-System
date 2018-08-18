@@ -6,7 +6,7 @@ if($session->is_employee_signed_in()){
 if(isset($_POST['employeelogin'])){
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
-    $staff_user_found = Employeeuser::verify_employee_user($email,$password);
+    $employee_user_found = Employeeuser::verify_employee_user($email,$password);
     if($employee_user_found){
         $session->employee_login($employee_user_found);
         redirect("employee.php");
