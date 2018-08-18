@@ -69,5 +69,15 @@ $staffuser = Staffuser::find_all();
 <div align="center">
     <a class="btn btn-primary btn-lg" href="adminlogout.php" role="button">logout</a>
 </div>
+<br />
+<br />
+<div>
+<h3> Menu for the day</h3>
+<div>
+    <a class="btn btn-primary btn-lg" href="admin_check_menu.php" role="button">Check Menu</a>
+</div>
+
+
+
 </body>
 </html>
