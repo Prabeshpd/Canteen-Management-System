@@ -18,6 +18,15 @@ class Employeeuser extends Db_object{
         $the_result_array = self::find_by_query($sql);
         return !empty($the_result_array) ? array_shift($the_result_array) : false;
     }
+    public function verify_user_for_password($email, $phone){
+        global $database;
+        $email = $database->escape_string($email);
+        $sql = "SELECT * FROM " . self::$db_table . " WHERE ";
+        $sql .= "email = '{$email}' ";
+        $sql .= "AND phone = '{$phone}' ";
+        $the_result_array = self::find_by_query($sql);
+        return !empty($the_result_array) ? array_shift($the_result_array) : false;
+    }
 }
 
 
