@@ -1,12 +1,13 @@
 <?php
 class Employeeuser extends Db_object{
     protected static $db_table = "employee_user";
-    protected static $db_table_fields = array('first_name', 'last_name', 'email', 'password');
+    protected static $db_table_fields = array('first_name', 'last_name', 'email', 'password', 'phone');
     public $id;
     public $first_name;
     public $last_name;
     public $email;
     public $password;
+    public $phone;
 
     public function verify_employee_user($email, $password){
         global $database;
@@ -36,6 +37,7 @@ class Employeeuser extends Db_object{
         $database->query($sql);
         return true;
     }
+   
 }
 
 

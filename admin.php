@@ -113,7 +113,21 @@ if(isset($_POST['order_confirm'])){
 }
 ?>
 
+<?php 
+if(isset($_POST['admin_validation'])){
+    $email = trim($_POST['email']);
+    echo '<div class="container">
+    <form method="post" action="employee_create.php">
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value=" ' . $email . ' " name="validate_email" id="validate_email"> ' . $email . ' </input>
+        
+        <br />
+        <br />
+        <button class="btn btn-outline-primary" type="email_validated" value = "email_validated" name="email_validated">Email Validate Button</button> 
+    </div>
+    </form
+</div>';
+}
 
 
-</body>
-</html>
+

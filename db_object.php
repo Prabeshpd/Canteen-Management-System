@@ -48,15 +48,15 @@ class Db_object{
         return $clean_properties;
     }
     public function save(){
-        return(isset($this->id)) ? $this->update() : $this->create();
+        return isset($this->id) ? $this->update() : $this->create();
     }
     public function create(){
         global $database;
         $properties = $this->clean_properties();
         $sql = "INSET INTO " . static::$db_table . "(" . implode(",", array_keys($properties)) . ")";
-        $sql.= " VLAUES ('". implode("','",array_values($properties)) ."')";
+        $sql.= " VALUES ('". implode("','", array_values($properties)) ."')";
         if($database->query($sql)){
-            $this->id = $database->insert_id();
+            $this->id = $database->the_insert_id();
             return true;
         }else{
             return false;
@@ -71,9 +71,9 @@ class Db_object{
         }
         $sql = "UPDATE " . static::$db_table . " SET ";
         $sql.= implode(",", $properties_pairs);
-        $sql.= "WHERE id = ". $database->escape_string($this->id);
+        $sql.= "WHERE id = " . $database->escape_string($this->id);
         $database->query($sql);
-        return (mysqli_ffected_rows($database->connection) == 1) ? true: false;
+        return (mysqli_affected_rows($database->connection) == 1) ? true: false;
     }
     public function delete(){
         global $database;

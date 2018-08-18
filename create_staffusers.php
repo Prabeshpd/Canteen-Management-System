@@ -34,6 +34,7 @@
             <label for = "password">Password</label>
             <input type="password" class="form-control" id="password" name="password" placeholder="enter your password">
         </div>
+        
         <div class="form-group" align="center">
             <button type="submit" class="btn btn-primary" value="submit" name="submit">Submit</button>
         </div>
