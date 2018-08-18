@@ -27,6 +27,15 @@ class Employeeuser extends Db_object{
         $the_result_array = self::find_by_query($sql);
         return !empty($the_result_array) ? array_shift($the_result_array) : false;
     }
+    public function change_password($email, $password){
+        global $database;
+        $email = $database->escape_string($email);
+        $sql = "UPDATE " . static::$db_table . " SET ";
+        $sql .= "password = '{$password}' ";
+        $sql .= "WHERE email = '{$email}'";
+        $database->query($sql);
+        return true;
+    }
 }
 
 
