@@ -74,3 +74,16 @@ if(!$session->is_staff_signed_in()){
 </div>
 </body>
 </html>
+
+<?php
+if(isset($_POST['item_select_to_staff'])){
+    $ordered_by_employee = trim($_POST['Menu_order']);
+    echo "Ordered by employee: " . $ordered_by_employee;
+}
+
+
+
+
+
+
+?>

@@ -76,10 +76,9 @@ $staffuser = Staffuser::find_all();
 <?php
 if(isset($_POST['menusubmitAdmin_staff'])){
     $menu_item = $_POST['Menu'];
-    echo "fghfghf";
     $item = new Menuitem();
 
-    switch($items){
+    switch($item){
         case($menu_item == 'Momo'):
         echo 'Momo: <li> ' . $item->buff_momo . ' </li> 
         <li> ' . $item->chicken_momo . ' </li>
@@ -128,6 +127,19 @@ if(isset($_POST['admin_validation'])){
     </form
 </div>';
 }
+?>
 
+<?php
+if(isset($_POST['item_select_to_admin'])){
+    $order_by_employee = trim($_POST['Menu_order']);
+    echo "Ordered by Employee: " . $order_by_employee;
+}
+
+
+
+
+
+
+?>
 
 

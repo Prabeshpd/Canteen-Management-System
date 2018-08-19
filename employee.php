@@ -6,7 +6,7 @@ if(!$session->is_employee_signed_in()){
     redirect("employeelogin.php");
 }
 ?>
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -32,12 +32,11 @@ if(!$session->is_employee_signed_in()){
 <?php
 if(isset($_POST['menusubmitEmployee_staff'])){
     $menu_item = $_POST['Menu'];
-    echo "fghfghf";
     $item = new Menuitem();
 
-    switch($items){
+    switch($item){
         case($menu_item == 'Momo'):
-        echo '<form action="" method="post">
+        echo '<form id="item_selected" method="post">
         <div class="container">
             <div class="form-group">
                     <label for = "Menu Item">Momo</label>
@@ -45,10 +44,26 @@ if(isset($_POST['menusubmitEmployee_staff'])){
                         <option> ' . $item->buff_momo . ' </option>
                         <option> ' . $item->chicken_momo . ' </option>
                         <option> ' . $item->paneer_momo . ' </option>
-                    </select>';
+                    </select>
+                    <button type="item_select_to_admin" class="btn btn-primary" value="item_select_to_admin" name="item_select_to_admin" onclick="dataToAdmin()">Submit To Admin</button>
+                    <button type="item_select_to_staff" class="btn btn-primary" value="item_select_to_staff" name="item_select_to_staff" onclick="dataToStaff()">Submit To Staff</button>
+                    </form>  
+                    <script>
+                    form_item = document.getElementById("item_selected");
+                    function dataToAdmin(){
+                        form_item.action="admin.php";
+                        form_item.submit();
+                    }
+                    function dataToStaff(){
+                        form_item.action="staff.php";
+                        form_item.submit();
+                    }
+                    
+                    
+                    </script>' ;
         break;
         case($menu_item == 'Chowmein'):
-        echo '<form action="" method="post">
+        echo '<form id="item_selected" method="post">
         <div class="container">
             <div class="form-group">
                     <label for = "Menu Item">Chowmein</label>
@@ -56,10 +71,26 @@ if(isset($_POST['menusubmitEmployee_staff'])){
                         <option> ' . $item->buff_chowmein . ' </option>
                         <option> ' . $item->chicken_chowmein . ' </option>
                         <option> ' . $item->paneer_chowmein . ' </option>
-                    </select>';
+                    </select>
+                    <button type="item_select_to_admin" class="btn btn-primary" value="item_select_to_admin" name="item_select_to_admin" onclick="dataToAdmin()">Submit To Admin</button>
+                    <button type="item_select_to_staff" class="btn btn-primary" value="item_select_to_staff" name="item_select_to_staff" onclick="dataToStaff()">Submit To Staff</button>
+                    </form>
+                    <script>
+                    form_item = document.getElementById("item_selected");
+                    function dataToAdmin(){
+                        form_item.action="admin.php";
+                        form_item.submit();
+                    }
+                    function dataToStaff(){
+                        form_item.action="staff.php";
+                        form_item.submit();
+                    }
+                    
+                    
+                    </script>';
         break;
         case($menu_item == 'Sandwich'):
-        echo '<form action="" method="post">
+        echo '<form id="item_selected" method="post">
         <div class="container">
             <div class="form-group">
                     <label for = "Menu Item">Sandwich</label>
@@ -67,10 +98,26 @@ if(isset($_POST['menusubmitEmployee_staff'])){
                         <option> ' . $item->buff_sandwich . ' </option>
                         <option> ' . $item->chicken_sandwich . ' </option>
                         <option> ' . $item->paneer_sandwich . ' </option>
-                    </select>';
+                    </select>
+                    <button type="item_select_to_admin" class="btn btn-primary" value="item_select_to_admin" name="item_select_to_admin" onclick="dataToAdmin()">Submit To Admin</button>
+                    <button type="item_select_to_staff" class="btn btn-primary" value="item_select_to_staff" name="item_select_to_staff" onclick="dataToStaff()">Submit To Staff</button>
+                    </form>
+                    <script>
+                    form_item = document.getElementById("item_selected");
+                    function dataToAdmin(){
+                        form_item.action="admin.php";
+                        form_item.submit();
+                    }
+                    function dataToStaff(){
+                        form_item.action="staff.php";
+                        form_item.submit();
+                    }
+                    
+                    
+                    </script>';
         break;
         case($menu_item == 'Burger'):
-        echo '<form action="" method="post">
+        echo '<form id="item_selected" method="post">
         <div class="container">
             <div class="form-group">
                     <label for = "Menu Item">Burger</label>
@@ -78,7 +125,23 @@ if(isset($_POST['menusubmitEmployee_staff'])){
                         <option> ' . $item->buff_burger . ' </option>
                         <option> ' . $item->chicken_burger . ' </option>
                         <option> ' . $item->paneer_burger . ' </option>
-                    </select>';;
+                    </select>
+                    <button type="item_select_to_admin" class="btn btn-primary" value="item_select_to_admin" name="item_select_to_admin" onclick="dataToAdmin()">Submit To Admin</button>
+                    <button type="item_select_to_staff" class="btn btn-primary" value="item_select_to_staff" name="item_select_to_staff" onclick="dataToStaff()">Submit To Staff</button>
+                    </form>
+                    <script>
+                    form_item = document.getElementById("item_selected");
+                    function dataToAdmin(){
+                        form_item.action="admin.php";
+                        form_item.submit();
+                    }
+                    function dataToStaff(){
+                        form_item.action="staff.php";
+                        form_item.submit();
+                    }
+                    
+                    
+                    </script>';
         break;
         
     }
