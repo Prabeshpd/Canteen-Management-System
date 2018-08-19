@@ -53,8 +53,8 @@ class Db_object{
     public function create(){
         global $database;
         $properties = $this->clean_properties();
-        $sql = "INSET INTO " . static::$db_table . "(" . implode(",", array_keys($properties)) . ")";
-        $sql.= " VALUES ('". implode("','", array_values($properties)) ."')";
+        $sql = "INSET INTO " .static::$db_table . "(" . implode(",", array_keys($properties)) . ")";
+        $sql .= " VALUES ('". implode("','", array_values($properties)) ."')";
         if($database->query($sql)){
             $this->id = $database->the_insert_id();
             return true;

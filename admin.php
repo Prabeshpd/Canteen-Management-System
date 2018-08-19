@@ -45,8 +45,8 @@ $staffuser = Staffuser::find_all();
 
             <td><?php echo $staff->first_name; ?>
               <div class="Post_link">
-                <a href="staffuser_delete.php/id=<?php echo $staff->id; ?>">Delete</a>
-                <a href="#">Edit</a>
+                <a href="staffuser_delete.php/?id=<?php echo $staff->id; ?>">Delete</a>
+                <a href="staffuser_update.php/?id=<?php echo $staff->id; ?>">Edit</a>
               </div>
             </td>
             <td><?php echo $staff->last_name; ?></td>
