@@ -153,5 +153,11 @@ if(isset($_POST['menusubmitEmployee_staff'])){
     <a class="btn btn-primary btn-lg" href="employeelogout.php" role="button">logout</a>
 </div>
 
-
+<?php
+if(isset($_POST['alert_employee'])){
+    echo '<script>
+    alert("order is completed")
+    </script>';
+}
+?>
 

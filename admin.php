@@ -109,6 +109,13 @@ if(isset($_POST['menusubmitAdmin_staff'])){
 if(isset($_POST['order_confirm'])){
     $order = $_POST['order_confirmed'];
     echo $order;
+     echo '<form method="post" action="employee.php"
+     <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="alertEmployee" name="alertEmployee" id="alertEmployee">Alert Employee </input>
+    </div>
+     <button class="btn btn-outline-primary" type="alert_employee" value = "alert_employee" name="alert_employee">Alert Employee</button>
+     </form>';
+   
 }
 ?>
 
