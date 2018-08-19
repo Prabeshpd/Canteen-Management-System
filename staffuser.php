@@ -18,13 +18,22 @@ class Staffuser extends Db_object{
         $the_result_array = self::find_by_query($sql);
         return !empty($the_result_array) ? array_shift($the_result_array) : false;
     }
-    public function save(){
-        if($this->id){
-          $this->update();
-        }else{
-          $this->create();
-        }
-      }
+    public function update_user($staff_id, $first_name, $last_name, $email, $password){
+      global $database;
+      $id = $database->escape_string($staff_id);
+      $first_name = $database->escape_string($first_name);
+      $last_name = $database->escape_string($last_name);
+      $email = $database->escape_string($email);
+      $password = $database->escape_string($password);
+      $sql = "UPDATE " . static::$db_table . " SET ";
+      $sql .= "first_name = '{$first_name}', ";
+      $sql .= "last_name = '{$last_name}', ";
+      $sql .= "email = '{$email}', ";
+      $sql .= "password = '{$password}' ";
+      $sql .= "WHERE id = '{$id}'";
+      $database->query($sql);
+      return true;
+  }
 }
 
 

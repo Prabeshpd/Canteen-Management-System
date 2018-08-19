@@ -42,16 +42,19 @@
 </html>
 
 <?php
-if(isset($_POST['changepassword'])){
+if(isset($_POST['updatestaff_user'])){
     $first_name = trim($_POST['first_name']);
     $last_name = trim($_POST['last_name']);
     $email = trim($_POST['email']);
     $staff_user = new Staffuser();
-    $password = trim($_POST['new_password']);
-    $staff_user = Staffuser::find_by_id($_GET['id']);
-    $staff_user->first_name = $first_name;
-    $staff_user->last_name = $last_name;
-    $staff_user->email = $email;
-    $staff_user->password = $password;
-    $staff_user->save();
+    $password = trim($_POST['password']);
+    $staff_id = trim($_GET['id']);
+    $resultt = Staffuser::update_user($staff_id, $first_name, $last_name, $email, $password);
+    if($resultt){
+        echo "changed";
+    }
+    else{
+        echo "failed";
+    }
+   
 }
