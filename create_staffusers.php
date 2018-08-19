@@ -16,7 +16,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
     
-<form action="save_staffusers.php" method="post">
+<form action="" method="post">
     <div class="container">
         <div class="form-group">
             <label for = "first_name">First Name</label>
@@ -44,3 +44,21 @@
 </body>
 </html>
 
+
+<?php
+
+if (isset($_POST['submit'])){
+    $first_name = trim($_POST['first_name']);
+    $last_name = trim($_POST['last_name']);
+    $email = trim($_POST['email']);
+    $password = trim($_POST['password']);
+    
+    $resulttt = Staffuser::create_user($first_name, $last_name, $email, $password);
+    if($resulttt){
+        echo true;
+    }
+    else{
+        echo false;
+    }
+}
+?>

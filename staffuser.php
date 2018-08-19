@@ -34,7 +34,21 @@ class Staffuser extends Db_object{
       $database->query($sql);
       return true;
   }
+  public function create_user( $first_name, $last_name, $email, $password){
+    global $database;
+    $first_name = $database->escape_string($first_name);
+    $last_name = $database->escape_string($last_name);
+    $email = $database->escape_string($email);
+    $password = $database->escape_string($password);
+    $sql = "INSERT INTO " . static::$db_table . "( 'first_name', 'last_name', 'email', 'password' )";
+    $sql .= "VALUES (" . "'{$first_name}', '{$last_name}', '{$email}', '{$password}' . )";
+    if($database->query($sql)){
+      static::$id = $database->the_insert_id();
+      return true;
+    }
+  }
 }
+
 
 
 ?>
